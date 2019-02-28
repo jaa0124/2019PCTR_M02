@@ -1,4 +1,4 @@
-package pg02.c01;
+package pr2;
 
 public class Hilo implements Runnable {
 
