@@ -79,10 +79,12 @@ public class Ball {
 
 	public void setX(double x) {
 		this.x = x;
+		assert x <= Board.RIGHTBOARD && x >= Board.LEFTBOARD : "Las bolas no pueden salirse fuera del tablero";
 	}
 
 	public void setY(double y) {
 		this.y = y;
+		assert y <= Board.TOPBOARD &&  y >= Board.BOTTOMBOARD : "Las bolas no pueden salirse fuera del tablero";
 	}
 
 	public Image getImage() {
