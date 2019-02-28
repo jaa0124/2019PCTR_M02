@@ -1,4 +1,4 @@
-package pr2;
+package pg02.c01;
 
 public class Hilo implements Runnable {
 
@@ -16,7 +16,15 @@ public class Hilo implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		
+		try {
+			while(!Thread.currentThread().isInterrupted()) {
+				ball.move();
+				board.repaint();
+				Thread.sleep(10);
+			}
+		} catch( InterruptedException e) {
+			System.err.println("El hilo se ha parado");
+		}
 	}
 
 	
