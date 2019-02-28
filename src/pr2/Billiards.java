@@ -1,3 +1,5 @@
+package pr2;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,9 +19,11 @@ public class Billiards extends JFrame {
 	private JButton b_start, b_stop;
 
 	private Board board;
+	
+	private Thread[] hilos;
 
-	// TODO update with number of group label. See practice statement.
-	private final int N_BALL = 2;
+	// DONE update with number of group label. See practice statement.
+	private final int N_BALL = 6;
 	private Ball[] balls;
 
 	public Billiards() {
@@ -47,19 +51,25 @@ public class Billiards extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(Width, Height);
 		setLocationRelativeTo(null);
-		setTitle("Práctica programación concurrente objetos móviles independientes");
+		setTitle("Pr�ctica programaci�n concurrente objetos m�viles independientes");
 		setResizable(false);
 		setVisible(true);
 	}
 
 	private void initBalls() {
-		// TODO init balls
+		// DONE init balls
+		balls = new Ball[N_BALL];
+		for( int i = 0 ; i < N_BALL ; i++) {
+			balls[i] = new Ball();
+		}
+		board.setBalls(balls);
 	}
 
 	private class StartListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when start button is pushed
+			
 
 		}
 	}
@@ -71,6 +81,7 @@ public class Billiards extends JFrame {
 
 		}
 	}
+	
 
 	public static void main(String[] args) {
 		new Billiards();
