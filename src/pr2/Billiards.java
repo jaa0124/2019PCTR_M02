@@ -1,4 +1,4 @@
-package pr2;
+package pg02.c01;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -51,7 +51,7 @@ public class Billiards extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(Width, Height);
 		setLocationRelativeTo(null);
-		setTitle("Prï¿½ctica programaciï¿½n concurrente objetos mï¿½viles independientes");
+		setTitle("Práctica programación concurrente objetos móviles independientes");
 		setResizable(false);
 		setVisible(true);
 	}
@@ -83,8 +83,12 @@ public class Billiards extends JFrame {
 	private class StopListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Code is executed when stop button is pushed
-
+			// DONE Code is executed when stop button is pushed
+			for( int i = 0; i< N_BALL; i++) {
+				hilos[i].interrupt();
+			}
+			hilos=null;
+		}
 	}
 	
 
