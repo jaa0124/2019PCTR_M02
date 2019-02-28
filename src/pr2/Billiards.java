@@ -68,8 +68,14 @@ public class Billiards extends JFrame {
 	private class StartListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Code is executed when start button is pushed
+			// DONE Code is executed when start button is pushed
 			
+			hilos = new Thread[N_BALL];
+			
+			for ( int i = 0; i < N_BALL; i++) {
+				hilos[i] = new Thread( new Hilo(balls[i], board));
+				hilos[i].start();
+			}
 
 		}
 	}
@@ -79,7 +85,6 @@ public class Billiards extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when stop button is pushed
 
-		}
 	}
 	
 
