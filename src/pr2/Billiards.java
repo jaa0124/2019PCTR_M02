@@ -51,7 +51,7 @@ public class Billiards extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(Width, Height);
 		setLocationRelativeTo(null);
-		setTitle("Pr·ctica programaciÛn concurrente objetos mÛviles independientes");
+		setTitle("Pr√°ctica programaci√≥n concurrente objetos m√≥viles independientes");
 		setResizable(false);
 		setVisible(true);
 	}
